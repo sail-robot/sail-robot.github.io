@@ -14,7 +14,7 @@ body {
 }
 
 .dnerf {
-  font-variant: small-caps;
+   font-weight: bold;
 }
 
 
@@ -27,6 +27,11 @@ body {
   font-family: 'Google Sans', sans-serif;
 }
 
+.centered-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .publication-title {
 }
