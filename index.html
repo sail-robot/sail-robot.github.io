@@ -28,6 +28,7 @@
 </head>
 <body>
 
+<!-- title and authors -->
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -38,7 +39,7 @@
             <span class="author-block">
               <a href="">Nadun Ranawaka Arachchige</a><sup>1*</sup>,</span>
             <span class="author-block">
-              <a href="">Zhenyang Chen</a><sup>1*</sup>,</span>
+              <a href="https://chenzheny.github.io/">Zhenyang Chen</a><sup>1*</sup>,</span>
             <span class="author-block">
               <a href="">Wonsuhk Jung</a><sup>1</sup>,
             </span>
@@ -52,16 +53,16 @@
               <a href="">Yu Hang He</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="">Yingyan Celine Lin</a><sup>1</sup>,
+              <a href="https://eiclab.scs.gatech.edu/pages/team.html">Yingyan Celine Lin</a><sup>1</sup>,
             </span>
             <span class="author-block">
               <a href="">Benjamin Joffe</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="">Shreyas Kousik</a><sup>1*</sup>, 
+              <a href="https://research.gatech.edu/people/shreyas-kousik">Shreyas Kousik</a><sup>1*</sup>, 
             </span>
             <span class="author-block">
-              <a href="">Danfei Xu</a><sup>1*</sup>
+              <a href="https://faculty.cc.gatech.edu/~danfei/">Danfei Xu</a><sup>1*</sup>
             </span>
           </div>
 
@@ -92,7 +93,7 @@
               </span>
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                <a href="https://youtu.be/7AWPs9uCsV8"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -128,6 +129,7 @@
   </div>
 </section>
 
+<!-- teaser video -->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
@@ -205,9 +207,9 @@
 </section> -->
 
 
+<!-- abstract -->
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
@@ -217,8 +219,6 @@
             Imitation Learning), a framework for enabling faster-than-
             demonstration execution of policies by addressing key technical
             challenges in robot dynamics and state-action distribution shifts.
-          </p>
-          <p>
             Offline Imitation Learning (IL) methods such as
             Behavior Cloning (BC) are a simple and effective way to acquire
             complex robotic manipulation skills. However, existing IL-trained
@@ -226,164 +226,275 @@
             shown in the demonstration. This limits the task throughput of
             a robotic system, a critical requirement for applications such
             as industrial automation.
-          </p>
-          <p>
-            <span class="dnerf">SAIL</span> features four tightly-connected components:
-            
-            (1) high-gain
-            control to enable high-fidelity tracking of IL policy trajectories, 
-            (2) consistency-preserving trajectory generation to ensure
-            smoother robot motion, (3) adaptive speed modulation that
-            dynamically adjusts execution speed based on motion complexity,
-            and (4) action scheduling to handle real-world system latencies.
+            SAIL features four tightly-connected components:
+            High-gain control to enable high-fidelity tracking of IL policy trajectories, 
+            consistency-preserving trajectory generation to ensure smoother robot motion, 
+            adaptive speed modulation that dynamically adjusts execution speed based on motion complexity, 
+            and action scheduling to handle real-world system latencies.
             Experimental validation on six robotic manipulation tasks shows
-            that SAIL achieves up to a 4× speedup over demonstration speed
-            in simulation and up to 3.2× speedup on physical robot.
+            that SAIL achieves up to a <strong>4×</strong> speedup over demonstration speed
+            in simulation and up to <strong>3.2×</strong> speedup on physical robot.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
+    <!-- Abstract. -->
+</section>
 
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <!-- <h2 class="title is-3">Video</h2> -->
-        <div class="centered-image">
-          <img src="static/images/teaser.png" alt="SAIL Teaser" width="75%">
+<!-- Demo Videos Section with Tabs -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Real-World Results</h2>
+    
+    <!-- Video Tabs -->
+    <div class="tabs is-centered is-medium mb-3">
+      <ul>
+        <li class="is-active" data-target="video1">
+          <a><strong></strong>Stacking Cup</strong></a>
+        </li>
+        <li data-target="video2">
+          <a><strong>Wiping Board</strong></a>
+        </li>
+        <li data-target="video3">
+          <a><strong>Baking</strong></a>
+        </li>
+        <li data-target="video4">
+          <a><strong>Folding Cloth</strong></a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Video Container -->
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <!-- Video 1 -->
+        <div id="video1" class="video-content is-active">
+          <video autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/stacking_cup_sail_baseline.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered mt-2">Stacking Cups to Paramid Shape</p>
         </div>
-        <!-- <div class="publication-video">
-          <iframe src="static/videos/teaser.mp4"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          <h2>Main SAIL Video</h2>
-        </div> -->
+        
+        <!-- Video 2 -->
+        <div id="video2" class="video-content">
+          <video autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/stacking_cup_sail_baseline.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered mt-2">Wiping Board</p>
+        </div>
+        
+        <!-- Video 3 -->
+        <div id="video3" class="video-content">
+          <video autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/stacking_cup_sail_baseline.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered mt-2">Baking: pick up bowl and put them in the oven</p>
+        </div>
+        
+        <!-- Video 4 -->
+        <div id="video4" class="video-content">
+          <video autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/stacking_cup_sail_baseline.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered mt-2">Folding Cloth</p>
+        </div>
       </div>
     </div>
-    <!--/ Paper video. -->
   </div>
 </section>
 
+<!-- method overview -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Full width overview -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">SAIL System Overview</h2>
+        <div class="content has-text-justified">
+          <!-- SAIL system overview picture -->
+          <div class="centered-image">
+            <img src="static/images/SAIL_system_overview.png" alt="SAIL Overview" width="150%">
+          </div>
+          <p>
+            <strong>(a) Policy Level:</strong> Starting with synchronized observations (Obs. sync) from robot state
+            and camera inputs, the system generates (1) temporally-consistent action predictions through action-conditioned CFG and (2) time-varying action interval δt. <br> <strong>(b) Controller Level:</strong> The predicted actions are scheduled for execution while accounting for sensing-inference delays, with outdated actions being discarded. The
+            scheduled actions are executed using a high-gain controller with velocity feedforward (Vel FF) terms to track trajectory at the specified time parametrization.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Policy Level with two columns -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-4">Policy Level</h2>
+        <!-- Two equal columns for challenges -->
+        <div class="columns">
+          <!-- Challenge 1 -->
+          <div class="column is-half">
+            <div class="content">
+              <p>
+                <strong>Challenge 1: Divergence of Consecutive Action Prediction</strong> Diffusion policy would produce diverging action predictions, which is harmful for high-speed execution. We propose a novel action-conditioned CFG to generate temporally-consistent action predictions.
+              </p>
+              <div class="centered-image">
+                <img src="static/images/method_divergence_prediction.png" alt="SAIL Overview" width="75%">
+              </div>
+            </div>
+          </div>
+
+          <!-- Challenge 2 -->
+          <div class="column is-half">
+            <div class="content">
+              <p>
+                <strong>Challenge 2: Adaptive Speed Modulation</strong> Motion segments that are nonlinear and require precise control should not be sped up.
+                Based on the motion complexity, we adjust the execution speed adaptively.
+              </p>
+              <div class="centered-image">
+                <img src="static/images/method_adaptive_speed.png" alt="speed modulation" width="100%">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- controller level -->
+    <div class="column is-centered has-text-centered">
+      <div class="content">
+        <h2 class="title is-4">Controller Level</h2>
+        
+        <!-- Two equal columns for challenges -->
+        <div class="columns">
+          <!-- Challenge 3 -->
+          <div class="column is-half">
+            <div class="content">
+              <p>
+                <strong>Challenge 3: Controller Behavior Shift</strong>
+                <!-- IL policy is commonly trained on commanded pose and deployed with low-gain controller. -->
+                <!-- However, the controller behavior may shift during high-speed execution. We propose to train policy using reached pose and leverage high-fidelity controller to track the trajectory precisely. -->
+              </p>
+              <div class="centered-image">
+                <!-- <img src="static/images/method1_reach_pose_command_pose.png" alt="reach pose" width="100%"> -->
+                <video poster="" id="reach pose" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/method_reach_pose.mp4"
+                        type="video/mp4">
+              </video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Challenge 4 -->
+          <div class="column is-half">
+            <div class="content">
+              <p>
+                <strong>Challenge 4: System Latency in Control Loop</strong> System latencies caused by communication and control loop can lead to out-of-distribution inputs to the policy and time-misaligned action commands to the controller.
+                To address this, we propose a novel action scheduling mechanism to handle real-world system latencies.
+              </p>
+              <div class="centered-image">
+                <img src="static/images/method_system_opt.png" alt="SAIL Overview" width="100%">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ controller level -->
+  </div>
+</section>
 
 <section class="section">
   <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Evaluation</h2>
 
-    <div class="columns is-centered">
-
+    <!-- challenge1: how controller and state affect result? -->
+    <div class="columns is-centered has-text-centered">
       <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Placeholder 1</h2>
+        <h2 class="title is-4"> High Gain Controller and Reached Pose Prediction</h2>
+        <div class="content has-text-justified">
+          <!-- SAIL system overview picture -->
+          <div class="centered-image">
+            <img src="static/images/SAIL_system_overview.png" alt="SAIL Overview" width="150%">
+          </div>
           <p>
-            Placeholder 1.
+            TODO: add:
           </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <!-- <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4"> -->
-            <h2>Placeholder 1 Video</h2>
-          </video>
         </div>
       </div>
-      <!--/ Visual Effects. -->
+    </div>
 
-      <!-- Matting. -->
+    <!-- challenge2: how CFG help? -->
+    <div class="columns is-centered has-text-centered">
       <div class="column">
-        <h2 class="title is-3">Placeholder 2</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              Placeholder 2.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <!-- <source src="./static/videos/matting.mp4"
-                      type="video/mp4"> -->
-              <h2>Placeholder 2 Video</h2>
-            </video>
-          </div>
-
+        <h2 class="title is-4">Classifier-Free Guidance for Consistent Action Prediction</h2>
+        <div class="content has-text-justified">
+          <!-- SAIL system overview picture -->
+          <!-- <div class="centered-image">
+            <img src="static/images/SAIL_system_overview.png" alt="SAIL Overview" width="150%">
+          </div> -->
+          <p>
+            TODO: add:
+          </p>
         </div>
       </div>
     </div>
-    <!--/ Matting. -->
 
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Placeholder 3</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Placeholder 4</h3>
+    <!-- challenge3:  speed adaptation -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-4">Speed Adaptation Modulation Increases Task Success Rate</h2>
         <div class="content has-text-justified">
-          <p>
-            Placeholder 4.
-          </p>
-        </div>
-        <!-- <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div> -->
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Placeholder 5</h3>
-        <div class="content has-text-justified">
-          <p>
-            Placeholder 5.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <!-- <source src="./static/videos/replay.mp4"
-                    type="video/mp4"> -->
-            <h2>Placeholder 5 Video</h2>
+          <!-- SAIL system overview picture -->
+          <div class="centered-image">
+            <!-- <img src="static/images/method1_reach_pose_command_pose.png" alt="reach pose" width="100%"> -->
+            <video poster="" id="reach pose" autoplay controls muted loop playsinline height="20%">
+            <source src="./static/videos/sim_speed_modulation.mp4"
+                    type="video/mp4">
           </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Works</h2>
-
-        <div class="content has-text-justified">
+          </div>
           <p>
-            Placeholder 6.
+            Adaptive speed modulation detects the motion complexity and adjusts the execution speed accordingly.
+            Policy execution is only sped up when the motion is linear and smooth. Execution is slowed down for complex motions.
           </p>
         </div>
       </div>
     </div>
-    <!--/ Concurrent Work. -->
+
+    <!-- Simulation Quantitative Results -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-4">Quantitative Results</h2>
+        <div class="content has-text-justified">
+          <!-- SAIL system overview picture -->
+          <div class="centered-image">
+            <img src="static/images/SAIL_system_overview.png" alt="SAIL Overview" width="150%">
+          </div>
+          <p>
+            TODO: add simulation introduction, put tables and numbers of real and sim experiments here
+          </p>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Limitations</h2>
+    <p>
+      TODO: add limitations
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Acknowledgement</h2>
+    <p>
+      TODO: add acknowledgement
+    </p>
+  </div>
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">

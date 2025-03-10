@@ -20,6 +20,37 @@ function setInterpolationImage(i) {
 }
 
 
+// Video tab functionality
+document.addEventListener('DOMContentLoaded', () => {
+  // Get all tabs
+  const tabs = document.querySelectorAll('.tabs li');
+  const videos = document.querySelectorAll('.video-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove active class from all tabs
+      tabs.forEach(t => t.classList.remove('is-active'));
+      // Add active class to clicked tab
+      tab.classList.add('is-active');
+
+      // Hide all videos
+      videos.forEach(video => {
+        video.classList.remove('is-active');
+        // Pause all videos
+        const videoElement = video.querySelector('video');
+        if (videoElement) videoElement.pause();
+      });
+
+      // Show selected video
+      const targetVideo = document.getElementById(tab.dataset.target);
+      targetVideo.classList.add('is-active');
+      // Play the selected video
+      const videoElement = targetVideo.querySelector('video');
+      if (videoElement) videoElement.play();
+    });
+  });
+});
+
 $(document).ready(function() {
     // Check for click events on the navbar burger icon
     $(".navbar-burger").click(function() {
