@@ -44,7 +44,7 @@
               <a href="">Wonsuhk Jung</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="">Woochul Shin</a><sup>1</sup>,
+              <a href="">Woo Chul Shin</a><sup>1</sup>,
             </span>
             <span class="author-block">
               <a href="">Rohan Bansal</a><sup>1</sup>,
@@ -241,6 +241,19 @@
     <!-- Abstract. -->
 </section>
 
+<!-- Add this script to your head section or at the end of body -->
+<script>
+  function handleVideoEnd(video) {
+    // Pause at the last frame
+    video.pause();
+    // Wait for 2 seconds before starting next loop
+    setTimeout(() => {
+      video.currentTime = 0;
+      video.play();
+    }, 2000); // 2000ms = 2 seconds pause
+  }
+  </script>
+
 <!-- Demo Videos Section with Tabs -->
 <section class="section">
   <div class="container is-max-desktop">
@@ -250,7 +263,7 @@
     <div class="tabs is-centered is-medium mb-3">
       <ul>
         <li class="is-active" data-target="video1">
-          <a><strong></strong>Stacking Cup</strong></a>
+          <a><strong>Stacking Cup</strong></a>
         </li>
         <li data-target="video2">
           <a><strong>Wiping Board</strong></a>
@@ -269,32 +282,33 @@
       <div class="column is-full">
         <!-- Video 1 -->
         <div id="video1" class="video-content is-active">
-          <video autoplay muted loop playsinline width="100%">
-            <source src="./static/videos/stacking_cup_sail_baseline.mp4" type="video/mp4">
+          <video autoplay muted loop playsinline controls width="100%" onended="handleVideoEnd(this)">
+            <!-- <source src="./static/videos/stacking_cup_sail_baseline.mp4" type="video/mp4"> -->
+            <source src="./static/videos/stack.mp4" type="video/mp4">
           </video>
           <p class="has-text-centered mt-2">Stacking Cups to Paramid Shape</p>
         </div>
         
         <!-- Video 2 -->
         <div id="video2" class="video-content">
-          <video autoplay muted loop playsinline width="100%">
-            <source src="./static/videos/stacking_cup_sail_baseline.mp4" type="video/mp4">
+          <video autoplay muted loop playsinline controls width="100%" onended="handleVideoEnd(this)">
+            <source src="./static/videos/wipe.mp4" type="video/mp4">
           </video>
           <p class="has-text-centered mt-2">Wiping Board</p>
         </div>
         
         <!-- Video 3 -->
         <div id="video3" class="video-content">
-          <video autoplay muted loop playsinline width="100%">
-            <source src="./static/videos/stacking_cup_sail_baseline.mp4" type="video/mp4">
+          <video autoplay muted loop playsinline controls width="100%" onended="handleVideoEnd(this)">
+            <source src="./static/videos/bake.mp4" type="video/mp4">
           </video>
           <p class="has-text-centered mt-2">Baking: pick up bowl and put them in the oven</p>
         </div>
         
         <!-- Video 4 -->
         <div id="video4" class="video-content">
-          <video autoplay muted loop playsinline width="100%">
-            <source src="./static/videos/stacking_cup_sail_baseline.mp4" type="video/mp4">
+          <video autoplay muted loop playsinline controls width="100%" onended="handleVideoEnd(this)">
+            <source src="./static/videos/fold.mp4" type="video/mp4">
           </video>
           <p class="has-text-centered mt-2">Folding Cloth</p>
         </div>
@@ -431,6 +445,11 @@
           <!-- <div class="centered-image">
             <img src="static/images/SAIL_system_overview.png" alt="SAIL Overview" width="150%">
           </div> -->
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <iframe src="static/images/noguide_trajectory.html" width="700" height="500" frameborder="0"></iframe>
+            </div>
+          </div>
           <p>
             TODO: add:
           </p>
