@@ -44,7 +44,7 @@
               <a href="">Wonsuhk Jung</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="">Woochul Shin</a><sup>1</sup>,
+              <a href="">Woo Chul Shin</a><sup>1</sup>,
             </span>
             <span class="author-block">
               <a href="">Rohan Bansal</a><sup>1</sup>,
@@ -136,8 +136,8 @@
       <!-- <div class="centered-image">
         <img src="static/images/teaser.png" alt="SAIL Teaser" width="75%">
       </div> -->
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
+      <video id="teaser" autoplay muted loop playsinline controls height="100%">
+        <source src="./static/videos/SAIL_Teaser.mp4"
                 type="video/mp4">
       </video>
       <!-- <h2 class="subtitle has-text-centered">
@@ -241,6 +241,19 @@
     <!-- Abstract. -->
 </section>
 
+<!-- Add this script to your head section or at the end of body -->
+<script>
+  function handleVideoEnd(video) {
+    // Pause at the last frame
+    video.pause();
+    // Wait for 2 seconds before starting next loop
+    setTimeout(() => {
+      video.currentTime = 0;
+      video.play();
+    }, 2000); // 2000ms = 2 seconds pause
+  }
+  </script>
+
 <!-- Demo Videos Section with Tabs -->
 <section class="section">
   <div class="container is-max-desktop">
@@ -250,7 +263,7 @@
     <div class="tabs is-centered is-medium mb-3">
       <ul>
         <li class="is-active" data-target="video1">
-          <a><strong></strong>Stacking Cup</strong></a>
+          <a><strong>Stacking Cup</strong></a>
         </li>
         <li data-target="video2">
           <a><strong>Wiping Board</strong></a>
@@ -269,32 +282,33 @@
       <div class="column is-full">
         <!-- Video 1 -->
         <div id="video1" class="video-content is-active">
-          <video autoplay muted loop playsinline width="100%">
-            <source src="./static/videos/stacking_cup_sail_baseline.mp4" type="video/mp4">
+          <video autoplay muted loop playsinline controls width="100%" onended="handleVideoEnd(this)">
+            <!-- <source src="./static/videos/stacking_cup_sail_baseline.mp4" type="video/mp4"> -->
+            <source src="./static/videos/stack.mp4" type="video/mp4">
           </video>
           <p class="has-text-centered mt-2">Stacking Cups to Paramid Shape</p>
         </div>
         
         <!-- Video 2 -->
         <div id="video2" class="video-content">
-          <video autoplay muted loop playsinline width="100%">
-            <source src="./static/videos/stacking_cup_sail_baseline.mp4" type="video/mp4">
+          <video autoplay muted loop playsinline controls width="100%" onended="handleVideoEnd(this)">
+            <source src="./static/videos/wipe.mp4" type="video/mp4">
           </video>
           <p class="has-text-centered mt-2">Wiping Board</p>
         </div>
         
         <!-- Video 3 -->
         <div id="video3" class="video-content">
-          <video autoplay muted loop playsinline width="100%">
-            <source src="./static/videos/stacking_cup_sail_baseline.mp4" type="video/mp4">
+          <video autoplay muted loop playsinline controls width="100%" onended="handleVideoEnd(this)">
+            <source src="./static/videos/bake.mp4" type="video/mp4">
           </video>
           <p class="has-text-centered mt-2">Baking: pick up bowl and put them in the oven</p>
         </div>
         
         <!-- Video 4 -->
         <div id="video4" class="video-content">
-          <video autoplay muted loop playsinline width="100%">
-            <source src="./static/videos/stacking_cup_sail_baseline.mp4" type="video/mp4">
+          <video autoplay muted loop playsinline controls width="100%" onended="handleVideoEnd(this)">
+            <source src="./static/videos/fold.mp4" type="video/mp4">
           </video>
           <p class="has-text-centered mt-2">Folding Cloth</p>
         </div>
@@ -331,7 +345,7 @@
         <!-- Two equal columns for challenges -->
         <div class="columns">
           <!-- Challenge 1 -->
-          <div class="column is-half">
+          <div class="column is-half has-text-left">
             <div class="content">
               <p>
                 <strong>Challenge 1: Divergence of Consecutive Action Prediction</strong> Diffusion policy would produce diverging action predictions, which is harmful for high-speed execution. We propose a novel action-conditioned CFG to generate temporally-consistent action predictions.
@@ -343,7 +357,7 @@
           </div>
 
           <!-- Challenge 2 -->
-          <div class="column is-half">
+          <div class="column is-half has-text-left">
             <div class="content">
               <p>
                 <strong>Challenge 2: Adaptive Speed Modulation</strong> Motion segments that are nonlinear and require precise control should not be sped up.
@@ -366,7 +380,7 @@
         <!-- Two equal columns for challenges -->
         <div class="columns">
           <!-- Challenge 3 -->
-          <div class="column is-half">
+          <div class="column is-half has-text-left">
             <div class="content">
               <p>
                 <strong>Challenge 3: Controller Behavior Shift</strong>
@@ -384,7 +398,7 @@
           </div>
 
           <!-- Challenge 4 -->
-          <div class="column is-half">
+          <div class="column is-half has-text-left">
             <div class="content">
               <p>
                 <strong>Challenge 4: System Latency in Control Loop</strong> System latencies caused by communication and control loop can lead to out-of-distribution inputs to the policy and time-misaligned action commands to the controller.
@@ -406,6 +420,42 @@
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Evaluation</h2>
 
+    <!-- Simulation Quantitative Results -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-4">Quantitative Results</h2>
+        <div class="content has-text-justified">
+
+          <div class="columns">
+            <!-- real world result -->
+            <div class="column">
+              <!-- SAIL system overview picture -->
+              <div class="centered-image">
+                <img src="static/images/sail_real_result.png" alt="SAIL Overview" width="100%">
+              </div>
+              <p>
+                <strong>Real world:</strong> For throughput-with-regret (TPR) of 4× speeding up
+                execution for real-world evaluation tasks, SAIL outperforms
+                the baseline DP 32% on average.
+              </p>
+            </div>
+
+            <!-- simulation result -->
+            <div class="column">
+              <div class="centered-image">
+                <img src="static/images/TPR_sim_result.jpg" alt="Sim number" width="100%">
+              </div>
+              <p>
+                <br>
+                <strong>Simulation:</strong> We test SAIL on 5 tasks in simulation. TODO: add more description here and short summary here.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
     <!-- challenge1: how controller and state affect result? -->
     <div class="columns is-centered has-text-centered">
       <div class="column">
@@ -413,10 +463,15 @@
         <div class="content has-text-justified">
           <!-- SAIL system overview picture -->
           <div class="centered-image">
-            <img src="static/images/SAIL_system_overview.png" alt="SAIL Overview" width="150%">
+            <img src="static/images/replay_vs_kp.jpg" alt="replay vs kp" width="75%">
           </div>
           <p>
-            TODO: add:
+            We examine the effects of increasing controller gains 
+            and speed for replaying demos in simulation. <strong>Left:</strong> using commanded poses performs better when replaying at the original
+            speed (c = 1) but using reached poses matches performance
+            when using high gains. <strong>Right:</strong> A high-gain controller using
+            reached poses performs better than one using commanded
+            poses at a higher execution speed.
           </p>
         </div>
       </div>
@@ -425,16 +480,71 @@
     <!-- challenge2: how CFG help? -->
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <h2 class="title is-4">Classifier-Free Guidance for Consistent Action Prediction</h2>
+        <h2 class="title is-4">What makes a good action condition for Classifier-Free Guidance? </h2>
         <div class="content has-text-justified">
           <!-- SAIL system overview picture -->
           <!-- <div class="centered-image">
             <img src="static/images/SAIL_system_overview.png" alt="SAIL Overview" width="150%">
           </div> -->
+                  <!-- Two equal columns for challenges -->
+          <div class="columns">
+            <!-- UAD video -->
+            <div class="column is-half">
+              <div class="content">
+                <div class="centered-image">
+                  <!-- <img src="static/images/method1_reach_pose_command_pose.png" alt="reach pose" width="100%"> -->
+                  <video poster="" id="reach pose" autoplay controls muted loop playsinline height="70%">
+                    <source src="./static/videos/cond_bm_false_cfg_weight_1_xy.mp4"
+                          type="video/mp4">
+                  </video>
+                </div>
+                <p>
+                  <strong>Action conditioned on unconditional action distribution</strong>
+                </p>
+              </div>
+            </div>
+
+            <!-- UAD temporally perturbed -->
+            <div class="column is-half">
+              <div class="content">
+                <div class="centered-image">
+                  <video poster="" id="reach pose" autoplay controls muted loop playsinline height="70%">
+                    <source src="./static/videos/cond_bm_false_cfg_weight_1_xy_spatial.mp4"
+                          type="video/mp4">
+                  </video>
+                </div>
+                <p>
+                  <strong>Action conditioned on temporally perturbed action</strong>
+                </p>
+              </div>
+            </div>
+          </div>
           <p>
-            TODO: add:
+            <span style="color: #FFD700;">Yellow:</span> Action condition, 
+            <span style="color: #808080;">Grey:</span> Unconditional action distribution, 
+            <span style="color: #FF0000;">Red:</span> Conditional action distribution.
+            CFG works best when the action condition is in unconditional action distribution.
           </p>
         </div>
+
+        <div class="columns is-centered">
+          <!-- First iframe -->
+          <div class="column is-half has-text-centered">
+            <iframe src="static/images/can_cfg_trajectory_demo11.html" width="75%" height="500" frameborder="0"></iframe>
+            <p class="mt-2">Can task rollout trajectory <strong>with CFG</strong>. Action conditioned on unconditional action distribution</p>
+          </div>
+          
+          <!-- Second iframe -->
+          <div class="column is-half has-text-centered">
+            <iframe src="static/images/can_noguide_trajectory_demo11.html" width="75%" height="500" frameborder="0"></iframe>
+            <p class="mt-2">Can task rollout trajectory <strong>without CFG</strong>.</p>
+          </div>
+        </div>
+        <!-- <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <iframe src="static/images/noguide_trajectory.html" width="700" height="500" frameborder="0"></iframe>
+          </div>
+        </div> -->
       </div>
     </div>
 
@@ -488,22 +598,6 @@
         </div>
       </div>
 
-    <!-- Simulation Quantitative Results -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <h2 class="title is-4">Quantitative Results</h2>
-        <div class="content has-text-justified">
-          <!-- SAIL system overview picture -->
-          <div class="centered-image">
-            <img src="static/images/SAIL_system_overview.png" alt="SAIL Overview" width="150%">
-          </div>
-          <p>
-            TODO: add simulation introduction, put tables and numbers of real and sim experiments here
-          </p>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -511,7 +605,8 @@
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Limitations</h2>
     <p>
-      TODO: add limitations
+      While SAIL shows promising results in both accelerating policy execution in simulation and real-world deployment,
+      we do not explicitly tackle the dynamics shift of robot-object interaction. Future research could address this by developing methods to incorporate explicit dynamics modeling into policies, either through learning speed-dependent dynamic models or leveraging physics simulation during training.
     </p>
   </div>
 </section>
