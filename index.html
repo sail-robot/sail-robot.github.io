@@ -556,7 +556,7 @@
           <!-- SAIL system overview picture -->
           <div class="centered-image">
             <!-- <img src="static/images/method1_reach_pose_command_pose.png" alt="reach pose" width="100%"> -->
-            <video poster="" id="reach pose" autoplay controls muted loop playsinline height="20%">
+            <video poster="" id="reach pose" autoplay controls muted loop playsinline width="85%">
             <source src="./static/videos/adaptive_speed-squarecan.mp4"
                     type="video/mp4">
           </video>
@@ -576,7 +576,7 @@
           <div class="column is-half">
             <div class="content">
               <div class="centered-image">
-                <img src="static/images/success_rate_plot_AS.png" alt="reach pose" width="100%">
+                <img src="static/images/success_rate_plot_AS.png" alt="reach pose" width="90%">
               </div>
             </div>
           </div>
@@ -607,6 +607,11 @@
     <p>
       While SAIL shows promising results in both accelerating policy execution in simulation and real-world deployment,
       we do not explicitly tackle the dynamics shift of robot-object interaction. Future research could address this by developing methods to incorporate explicit dynamics modeling into policies, either through learning speed-dependent dynamic models or leveraging physics simulation during training.
+
+      <br>
+
+      Adaptive Speed Modulation is also currently only applied in simulation, while a gripper heuristic for slowdown is used in real experiments. We found that 
+      ASM would not slow down consistently in the right segments due to the noisiness of real data. Future research could aim to develop upon this problem.
     </p>
   </div>
 </section>
