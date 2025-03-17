@@ -441,23 +441,52 @@
     <!-- challenge3:  speed adaptation -->
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <h2 class="title is-4">Speed Adaptation Modulation Increases Task Success Rate</h2>
+        <h2 class="title is-4">Adaptive Speed Modulation Increases Task Success Rate</h2>
         <div class="content has-text-justified">
           <!-- SAIL system overview picture -->
           <div class="centered-image">
             <!-- <img src="static/images/method1_reach_pose_command_pose.png" alt="reach pose" width="100%"> -->
             <video poster="" id="reach pose" autoplay controls muted loop playsinline height="20%">
-            <source src="./static/videos/sim_speed_modulation.mp4"
+            <source src="./static/videos/adaptive_speed-squarecan.mp4"
                     type="video/mp4">
           </video>
           </div>
           <p>
-            Adaptive speed modulation detects the motion complexity and adjusts the execution speed accordingly.
-            Policy execution is only sped up when the motion is linear and smooth. Execution is slowed down for complex motions.
+            Compared to a simple gripper heuristic, Adaptive Speed Modulation will detect the motion complexity of the action sequence and adjust the execution speed accordingly.
+            As an inherent result, policy execution is only sped up when the motion is linear and smooth, and is only slowed down for complex motion 
+            (e.g. precise manipulation).
+
           </p>
         </div>
       </div>
     </div>
+
+        <!-- Speed adaptation plot -->
+        <div class="columns">
+          <div class="column is-half">
+            <div class="content">
+              <div class="centered-image">
+                <img src="static/images/success_rate_plot_AS.png" alt="reach pose" width="100%">
+              </div>
+            </div>
+          </div>
+
+          <!-- Plot Description -->
+          <div class="column is-half">
+            <div class="content">
+              <p>
+                <strong>Metrics.</strong>  Adaptive Speed Modulation is necessary
+                for success in high-precision tasks. As seen in the results
+                to the left, our ablation baseline (SAIL-AS) without ASM achieves a reduced success rate
+                when compared to SAIL. Since tasks like Square, Stack, and Mug
+                require precise motion, even minor errors in tracking or model
+                prediction can lead to failure, hence why it is important to slow
+                down.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!-- Simulation Quantitative Results -->
     <div class="columns is-centered has-text-centered">
